@@ -1,9 +1,9 @@
 .movieCard {
-  margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 10%;
 }
 .movieCard .card {
   margin: 40px;

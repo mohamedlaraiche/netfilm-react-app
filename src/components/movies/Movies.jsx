@@ -1,11 +1,24 @@
 import React from "react";
-
-const Movies = ({ movies }) => {
+import MovieCard from "./MovieCard";
+import "./movies.css";
+const Movies = ({ movies, setisLoading, isLoading }) => {
   return (
-    <div>
-      {movies.map((movie) => (
-        <h1 key={movie.id}> {movie.title} </h1>
-      ))}
+    <div className="movieCard">
+      {isLoading ? (
+        <p> Loading ... </p>
+      ) : (
+        movies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            title={movie.title}
+            img={movie.poster_path}
+            release_date={movie.release_date}
+            backdrop={movie.backdrop_path}
+            overview={movie.overview}
+            popularity={movie.popularity}
+          />
+        ))
+      )}
     </div>
   );
 };

@@ -1,0 +1,25 @@
+.movieCard {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.movieCard .card {
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 3px 2px 20px 12px #ffd802;
+  padding: 20px;
+}
+.deatilsBtn {
+  padding: 10px 30px;
+  border: none;
+  font-weight: 550;
+  cursor: pointer;
+}
+.deatilsBtn:hover {
+  background-color: #ffd802;
+}

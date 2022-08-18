@@ -1,0 +1,13 @@
+.box {
+  background-color: #222;
+  height: auto;
+  padding-bottom: 10%;
+}
+
+a {
+  text-decoration: none;
+  color: #ffd802;
+}
+li {
+  list-style: none;
+}

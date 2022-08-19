@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 const NavBar = () => {
   const [navBar, setNavBar] = useState("close");
-  const [showLinks, setShowLinks] = useState("none");
-  const burgerHandler = () => {
-    setNavBar(navBar === "close" ? "open" : "close");
-    setShowLinks(showLinks === "none" ? "show" : "none");
-  };
+  const burgerHandler = () => setNavBar(navBar === "close" ? "open" : "close");
 
   return (
     <header>
@@ -18,10 +14,10 @@ const NavBar = () => {
           </Link>
           <ul id={navBar}>
             <li>
-              <Link id={showLinks} to="/movie">
+              <Link onClick={() => setNavBar("close")} to="/movie">
                 Movies
               </Link>
-              <Link id={showLinks} to="/show">
+              <Link onClick={() => setNavBar("close")} to="/show">
                 Shows
               </Link>
             </li>

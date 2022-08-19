@@ -46,22 +46,22 @@ nav ul li a:hover {
     background-color: #ffd802;
     width: 100%;
     height: auto;
+    z-index: 1;
   }
-  #none {
-    display: none;
-  }
-  #show {
+  nav ul li a {
     display: block;
   }
   nav ul li a:hover {
     color: #fff;
   }
   #close {
+    display: none;
     transform: translateX(100%);
     transition: 1s;
   }
 
   #open {
+    display: flex;
     transform: translateX(0%);
     transition: 1s;
   }

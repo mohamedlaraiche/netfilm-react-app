@@ -22,10 +22,11 @@ const Home = ({ trends, isLoading }) => {
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
+        zIndex: "0",
       }}
     >
       <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={0}
         autoplay={{
           delay: 2000,

@@ -10,6 +10,22 @@ const loadingline = [
 
 const Shows = ({ shows, isLoading, setisLoading }) => {
   const [sShow, setSShow] = useState("");
+  const [pageCount, setPageCount] = useState(2);
+  const [showsPages, setShowPages] = useState([]);
+  const Pagination = async (pageCount) => {
+    setisLoading(true);
+    const res = await fetch(
+      `https://api.themoviedb.org/3/tv/popular?api_key=a947b0189bb3d9fa0a8bc001124b7487&language=en-US&page=${pageCount}`
+    );
+    const data = await res.json();
+    setShowPages(data.results);
+    setisLoading(false);
+  };
+
+  const showLoadMore = () => {
+    setPageCount(pageCount + 1);
+    Pagination(pageCount);
+  };
   return (
     <>
       <Search
@@ -40,6 +56,24 @@ const Shows = ({ shows, isLoading, setisLoading }) => {
                   popularity={show.popularity}
                 />
               ))}
+        {showsPages
+          .filter((asd) => asd.name.toLowerCase().includes(sShow))
+          .map((show) => (
+            <Card
+              key={show.id}
+              title={show.name}
+              img={show.poster_path}
+              release_date={show.first_air_date}
+              backdrop={show.backdrop_path}
+              overview={show.overview}
+              popularity={show.popularity}
+            />
+          ))}
+      </div>
+      <div className="loadMoreHolder">
+        <button className="loadMoreBtn" onClick={showLoadMore}>
+          load more
+        </button>
       </div>
     </>
   );

@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 30px;
 }
 .movieCard .card {
   box-shadow: 3px 2px 20px 12px #ffd802;
@@ -12,7 +11,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 30px;
+  margin: 50px;
 }
 .movieCard .card img {
   max-width: 400px;
@@ -39,5 +38,24 @@
     width: 80%;
   }
 }
-
-
+.loadMoreHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+}
+.loadMoreBtn {
+  padding: 15px 50px;
+  background-color: #ffd802;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  border: 3px solid #ffd802;
+  font-size: 17px;
+}
+.loadMoreBtn:hover {
+  background-color: #222;
+  color: #ffd802;
+  border: 3px solid #ffd802;
+}

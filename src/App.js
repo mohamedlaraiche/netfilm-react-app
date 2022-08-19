@@ -21,7 +21,6 @@ const App = () => {
       );
       const data = await res.json();
       setMovies(data.results);
-      console.log(data.results[0].id);
       setisLoading(false);
     };
     const getShows = async () => {
@@ -38,7 +37,6 @@ const App = () => {
         "https://api.themoviedb.org/3/trending/all/day?api_key=a947b0189bb3d9fa0a8bc001124b7487"
       );
       const data = await res.json();
-      console.log(data.results);
       setTrends(data.results);
     };
 

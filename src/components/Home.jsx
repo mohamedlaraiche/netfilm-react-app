@@ -25,13 +25,17 @@ const Home = ({ trends, isLoading }) => {
       }}
     >
       <Swiper
+        slidesPerView={3}
+        spaceBetween={0}
         autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
+          delay: 2000,
         }}
+        loop={true}
         cssMode={true}
         navigation={true}
-        pagination={true}
+        pagination={{
+          type: "progressbar",
+        }}
         mousewheel={true}
         keyboard={true}
         modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
@@ -101,7 +105,7 @@ const Home = ({ trends, isLoading }) => {
                   }
                   height="850px"
                   width="100%"
-                  alt=""
+                  alt="trending"
                 />
               </SwiperSlide>
             </div>

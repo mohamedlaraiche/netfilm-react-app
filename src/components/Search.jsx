@@ -1,7 +1,4 @@
-import React from "react";
-
-const Search = () => {
-  let searchHandler = () => {};
+const Search = ({ value, onChange }) => {
   return (
     <div
       style={{
@@ -18,7 +15,6 @@ const Search = () => {
           alignItems: "center",
           justifyContent: "center",
         }}
-        onSubmit={searchHandler}
       >
         <input
           style={{
@@ -31,6 +27,8 @@ const Search = () => {
           }}
           type="text"
           placeholder="Search..."
+          value={value}
+          onChange={onChange}
         />
         <button className="searchBtn" type="submit">
           Search

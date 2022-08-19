@@ -9,6 +9,10 @@ const App = () => {
   const [shows, setShows] = useState([]);
   const [trends, setTrends] = useState([]);
   const [isLoading, setisLoading] = useState(true);
+  const [searchLogic, setSearchLogic] = useState("");
+  const [searchMovies, setSearchMovies] = useState("");
+  const [searchParam] = useState(["title"]);
+  const [searchMParam] = useState(["title"]);
   useEffect(() => {
     const getMovies = async () => {
       setisLoading(true);
@@ -17,6 +21,7 @@ const App = () => {
       );
       const data = await res.json();
       setMovies(data.results);
+      console.log(data.results[0].id);
       setisLoading(false);
     };
     const getShows = async () => {
@@ -54,6 +59,9 @@ const App = () => {
           path="/movie"
           element={
             <Movies
+              searchMParam={searchMParam}
+              searchMovies={searchMovies}
+              setSearchMovies={setSearchMovies}
               movies={movies}
               isLoading={isLoading}
               setisLoading={setisLoading}
@@ -67,6 +75,9 @@ const App = () => {
               shows={shows}
               isLoading={isLoading}
               setisLoading={setisLoading}
+              searchLogic={searchLogic}
+              setSearchLogic={setSearchLogic}
+              searchParam={searchParam}
             />
           }
         />

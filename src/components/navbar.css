@@ -22,3 +22,47 @@ nav ul li a {
 nav ul li a:hover {
   color: #ffd802;
 }
+
+.burger div {
+  width: 35px;
+  height: 3px;
+  margin: 5px;
+  padding: 2px;
+  border-radius: 30px;
+  background-color: #ffd802;
+}
+.burger {
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 383px) {
+  .burger {
+    display: block;
+  }
+  nav ul {
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    background-color: #ffd802;
+    width: 100%;
+    height: auto;
+  }
+  #none {
+    display: none;
+  }
+  #show {
+    display: block;
+  }
+  nav ul li a:hover {
+    color: #fff;
+  }
+  #close {
+    transform: translateX(100%);
+    transition: 1s;
+  }
+
+  #open {
+    transform: translateX(0%);
+    transition: 1s;
+  }
+}

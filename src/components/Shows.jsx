@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "./Card";
 import Stack from "@mui/material/Stack";
 import { LinearProgress } from "@mui/material";
@@ -8,9 +9,13 @@ const loadingline = [
 ];
 
 const Shows = ({ shows, isLoading, setisLoading }) => {
+  const [sShow, setSShow] = useState("");
   return (
     <>
-      <Search />
+      <Search
+        value={sShow}
+        onChange={(e) => setSShow(e.target.value.toLowerCase())}
+      />
       <div className="movieCard">
         {isLoading
           ? loadingline.map((load) => (
@@ -22,17 +27,19 @@ const Shows = ({ shows, isLoading, setisLoading }) => {
                 <LinearProgress style={{ margin: "10px" }} color="inherit" />
               </Stack>
             ))
-          : shows.map((show) => (
-              <Card
-                key={show.id}
-                title={show.name}
-                img={show.backdrop_path}
-                release_date={show.first_air_date}
-                backdrop={show.backdrop_path}
-                overview={show.overview}
-                popularity={show.popularity}
-              />
-            ))}
+          : shows
+              .filter((asd) => asd.name.toLowerCase().includes(sShow))
+              .map((show) => (
+                <Card
+                  key={show.id}
+                  title={show.name}
+                  img={show.poster_path}
+                  release_date={show.first_air_date}
+                  backdrop={show.backdrop_path}
+                  overview={show.overview}
+                  popularity={show.popularity}
+                />
+              ))}
       </div>
     </>
   );

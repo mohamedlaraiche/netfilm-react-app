@@ -10,7 +10,9 @@ const style = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  height: "853px",
+  maxWidth: "700px",
+  height: "auto",
+  width: "50%",
 };
 const Home = ({ trends, isLoading }) => {
   return (

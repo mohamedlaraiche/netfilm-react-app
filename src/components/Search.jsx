@@ -22,7 +22,7 @@ const Search = () => {
       >
         <input
           style={{
-            padding: "10px",
+            padding: "15px",
             maxWidth: "600px",
             width: "60%",
             height: "auto",

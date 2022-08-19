@@ -22,12 +22,19 @@ const Card = ({ title, img, release_date, drop, overview, popularity }) => {
   return (
     <>
       <div onClick={handleOpen} className="card">
-        <h1 style={{ color: "#fff", margin: "10px" }}> {title} </h1>
-        <img
-          src={`https://image.tmdb.org/t/p/original/${img}`}
-          width="400px"
-          alt="poster"
-        />
+        <h1
+          style={{
+            color: "#fff",
+            margin: "10px",
+            fontSize: "25px",
+
+            height: "auto",
+          }}
+        >
+          {" "}
+          {title}{" "}
+        </h1>
+        <img src={`https://image.tmdb.org/t/p/original/${img}`} alt="poster" />
         <p style={{ color: "#fff", margin: "10px" }}>
           <span style={{ fontWeight: 600 }}>Release Date:</span> {release_date}
         </p>
@@ -73,6 +80,7 @@ const Card = ({ title, img, release_date, drop, overview, popularity }) => {
             sx={{ mt: 2 }}
           >
             <img
+              className="modalImg"
               src={`https://image.tmdb.org/t/p/original/${img}`}
               alt="poster"
             />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Movies from "./components/movies/Movies";
-import Shows from "./components/shows/Shows";
-import NavBar from "./components/navbar/NavBar";
+import Movies from "./components/Movies";
+import Shows from "./components/Shows";
+import NavBar from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 const App = () => {

@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import Modal from "@mui/material/Modal";
-import "./movies.css";
+import "./style.css";
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  maxWidth: 700,
+  maxWidth: "700px",
   width: "80%",
-  height: "95%",
+  height: "auto",
   bgcolor: "#ffd802",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
-const MovieCard = ({ title, img, release_date, overview, popularity }) => {
+const Card = ({ title, img, release_date, drop, overview, popularity }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <>
-      <div className="card">
+      <div onClick={handleOpen} className="card">
         <h1 style={{ color: "#fff", margin: "10px" }}> {title} </h1>
         <img
           src={`https://image.tmdb.org/t/p/original/${img}`}
@@ -29,11 +29,8 @@ const MovieCard = ({ title, img, release_date, overview, popularity }) => {
           alt="poster"
         />
         <p style={{ color: "#fff", margin: "10px" }}>
-          Release date : {release_date}
+          <span style={{ fontWeight: 600 }}>Release Date:</span> {release_date}
         </p>
-        <button className="deatilsBtn" onClick={handleOpen}>
-          More details
-        </button>
       </div>
       <Modal
         open={open}
@@ -47,9 +44,8 @@ const MovieCard = ({ title, img, release_date, overview, popularity }) => {
               style={{
                 cursor: "pointer",
                 padding: "15px",
-                background: "#222",
+                background: "#ffd802",
                 border: "none",
-                color: "#ffd802",
                 fontWeight: 600,
               }}
               onClick={handleClose}
@@ -78,19 +74,12 @@ const MovieCard = ({ title, img, release_date, overview, popularity }) => {
           >
             <img
               src={`https://image.tmdb.org/t/p/original/${img}`}
-              style={{
-                maxWidth: "500px",
-                width: "100%",
-                height: "600px",
-                margin: "10px",
-              }}
               alt="poster"
             />
             <p
               style={{
                 textAlign: "justify",
-                margin: "5px",
-                fontSize: "18px",
+                margin: "10px",
               }}
             >
               {overview}
@@ -102,4 +91,4 @@ const MovieCard = ({ title, img, release_date, overview, popularity }) => {
   );
 };
 
-export default MovieCard;
+export default Card;

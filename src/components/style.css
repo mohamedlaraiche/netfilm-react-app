@@ -12,6 +12,7 @@
   justify-content: center;
   flex-direction: column;
   margin: 50px;
+  cursor: pointer;
 }
 .movieCard .card img {
   max-width: 400px;

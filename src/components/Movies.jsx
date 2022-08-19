@@ -13,11 +13,14 @@ const Movies = ({ movies, setisLoading, isLoading, searchLogic }) => {
   const [pageCount, setPageCount] = useState(2);
   const [moviesPages, setMoviesPages] = useState([]);
   const Pagination = async (pageCount) => {
+    setisLoading(true);
+
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=a947b0189bb3d9fa0a8bc001124b7487&language=en-US&page=${pageCount}`
     );
     const data = await res.json();
     setMoviesPages(data.results);
+    setisLoading(false);
   };
 
   const moviesLoadMore = () => {
